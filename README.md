@@ -1,2 +1,2 @@
 # Cryptography-Application
-Desktop application written in Java that ciphers and deciphers texts using several methods such as Caesar Cipher, Vigenère Cipher, DES, RSA, AES.
+Desktop application written in Java that ciphers and deciphers texts using several methods such as Caesar Cipher, Vigenère Cipher.
