@@ -39,7 +39,7 @@ public class Main extends Application {
 			TextArea textE, textD;
 			TextField keyE, keyD; 
 			Label labelE, labelD;
-			
+			 
 //			decryptButton.setOnAction(event -> System.exit(0));
 //			encryptButton.setOnAction(event -> System.out.println("saving "));
 			
