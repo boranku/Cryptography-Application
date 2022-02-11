@@ -1,31 +1,22 @@
 package application;
 
 public class Cryption {
-	private String inputText, convertedText, key, status;
-	private char method;
 	
-	public Cryption(String inputText, String key, String status, char method) {
-		this.inputText = inputText;
-		this.key = key;
-		this.status = status;
-		this.method = method;
-		convertedText = convert();
-		
-	}
+	private String inputText, convertedText, key, operation, method;
 	
-	public String convert() {
+	public void convert() {
 		String returnText = "";
-		if(status.equalsIgnoreCase("decrypt")) {
-			if(method == 'c') returnText = decryptWithCeasar();
-			else if (method=='v') returnText = decryptWithVigenere();
+		if(operation.equalsIgnoreCase("decrypt")) {
+			if(method.equals("Ceasar Cipher")) returnText = decryptWithCeasar();
+			else if (method.equals("Vigenère Cipher")) returnText = decryptWithVigenere();
 			else returnText = null;
 		}
-		else if(status.equalsIgnoreCase("encrypt")) {
-			if(method =='c') returnText = encryptWithCeasar();
-			else if (method=='v') returnText = encryptWithVigenere();
+		else if(operation.equalsIgnoreCase("encrypt")) {
+			if(method.equals("Ceasar Cipher")) returnText = encryptWithCeasar();
+			else if (method.equals("Vigenère Cipher")) returnText = encryptWithVigenere();
 			else returnText = null;
 		}
-		return returnText;
+		convertedText = returnText;
 	}
 
 	private String encryptWithVigenere() {
@@ -54,6 +45,22 @@ public class Cryption {
 	
 	public String getConvertedText() {
 		return convertedText;
+	}
+	
+	public void setKey(String key) {
+		this.key=key;
+	}
+	
+	public void setInputText(String inputText) {
+		this.inputText=inputText;
+	}
+	
+	public void setOperation(String operation) {
+		this.operation=operation;
+	}
+	
+	public void setMethod(String method) {
+		this.method=method;
 	}
 }
 
