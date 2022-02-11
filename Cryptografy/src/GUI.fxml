@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="681.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="681.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <tabs>
-      <Tab text="Encrypt">
+      <Tab fx:id="tabE" text="Encrypt">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -21,22 +21,22 @@
                      <children>
                         <Pane prefHeight="280.0" prefWidth="628.0">
                            <children>
-                              <TextArea layoutX="123.0" layoutY="14.0" prefHeight="253.0" prefWidth="425.0" promptText="Enter text to encrypt. " />
+                              <TextArea fx:id="textE" layoutX="123.0" layoutY="14.0" prefHeight="253.0" prefWidth="425.0" promptText="Enter text to encrypt. " />
                            </children>
                         </Pane>
                         <Pane prefHeight="71.0" prefWidth="628.0">
                            <children>
-                              <RadioButton contentDisplay="CENTER" layoutX="128.0" layoutY="14.0" mnemonicParsing="false" text="Ceasar Cipher" />
-                              <RadioButton layoutX="128.0" layoutY="36.0" mnemonicParsing="false" text="Vigenère Cipher" />
-                              <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="338.0" layoutY="9.0" prefHeight="31.0" prefWidth="259.0" text="Enter key:">
+                              <RadioButton fx:id="CeasarE" contentDisplay="CENTER" layoutX="128.0" layoutY="14.0" mnemonicParsing="false" text="Ceasar Cipher" />
+                              <RadioButton fx:id="VigenereE" layoutX="128.0" layoutY="36.0" mnemonicParsing="false" text="Vigenère Cipher" />
+                              <Label fx:id="labelE" alignment="CENTER" contentDisplay="BOTTOM" layoutX="338.0" layoutY="9.0" prefHeight="31.0" prefWidth="259.0" text="Enter key:">
                                  <graphic>
-                                    <TextField />
+                                    <TextField fx:id="keyE" />
                                  </graphic>
                               </Label>
                            </children></Pane>
                         <Pane prefHeight="54.0" prefWidth="628.0">
                            <children>
-                              <Button layoutX="283.0" layoutY="15.0" mnemonicParsing="false" text="Encrypt" />
+                              <Button layoutX="283.0" layoutY="15.0" mnemonicParsing="false" onAction="#clicked" text="Encrypt" />
                            </children>
                         </Pane>
                      </children>
@@ -45,7 +45,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Decrypt">
+      <Tab fx:id="tabD" text="Decrypt">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -53,23 +53,23 @@
                      <children>
                         <Pane prefHeight="280.0" prefWidth="628.0">
                            <children>
-                              <TextArea layoutX="123.0" layoutY="14.0" prefHeight="253.0" prefWidth="425.0" promptText="Enter text to decrypt. " />
+                              <TextArea fx:id="textD" layoutX="123.0" layoutY="14.0" prefHeight="253.0" prefWidth="425.0" promptText="Enter text to decrypt. " />
                            </children>
                         </Pane>
                         <Pane prefHeight="71.0" prefWidth="628.0">
                            <children>
-                              <RadioButton contentDisplay="CENTER" layoutX="128.0" layoutY="14.0" mnemonicParsing="false" text="Ceasar Cipher" />
-                              <RadioButton layoutX="128.0" layoutY="36.0" mnemonicParsing="false" text="Vigenère Cipher" />
-                              <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="338.0" layoutY="9.0" prefHeight="31.0" prefWidth="259.0" text="Enter the key:">
+                              <RadioButton fx:id="CeasarD" contentDisplay="CENTER" layoutX="128.0" layoutY="14.0" mnemonicParsing="false" text="Ceasar Cipher" />
+                              <RadioButton fx:id="VigenereD" layoutX="128.0" layoutY="36.0" mnemonicParsing="false" text="Vigenère Cipher" />
+                              <Label fx:id="labelD" alignment="CENTER" contentDisplay="BOTTOM" layoutX="338.0" layoutY="9.0" prefHeight="31.0" prefWidth="259.0" text="Enter the key:">
                                  <graphic>
-                                    <TextField />
+                                    <TextField fx:id="keyD" />
                                  </graphic>
                               </Label>
                            </children>
                         </Pane>
                         <Pane prefHeight="54.0" prefWidth="628.0">
                            <children>
-                              <Button layoutX="283.0" layoutY="15.0" mnemonicParsing="false" text="Decrypt" />
+                              <Button fx:id="decryptButton" layoutX="283.0" layoutY="15.0" mnemonicParsing="false" text="Decrypt" />
                            </children>
                         </Pane>
                      </children>

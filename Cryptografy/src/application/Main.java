@@ -1,4 +1,6 @@
 package application;
+import java.awt.TextArea;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
@@ -25,13 +27,21 @@ public class Main extends Application {
 	Scene decrypt,encrypt;
 	public void start(Stage stage) {
 		window = stage;
-		stage.setTitle("WELCOME");
+		stage.setTitle("Cryptography App");
 		stage.show();
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/GUI.fxml"));
 			Scene scene = new Scene(root);
-			Button operateButton;
+			Button decryptButton = new Button("Decrypt");
+			Button encryptButton = new Button("Encrypt");
+			RadioButton VigenereD, VigenereE;
+			RadioButton CeasarD, CeasarE;
+			TextArea textE, textD;
+			TextField keyE, keyD; 
+			Label labelE, labelD;
 			
+//			decryptButton.setOnAction(event -> System.exit(0));
+//			encryptButton.setOnAction(event -> System.out.println("saving "));
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setScene(scene);
