@@ -30,8 +30,11 @@ public class Main extends Application {
 		stage.setTitle("Cryptography App");
 		stage.show();
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/GUI.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI.fxml"));
+	        Parent root = loader.load();
 			Scene scene = new Scene(root);
+			
+			Controller controller = loader.getController();
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setScene(scene);
